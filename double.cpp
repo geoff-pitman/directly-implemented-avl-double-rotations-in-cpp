@@ -41,6 +41,7 @@ Below are the directly implemented double rotations.
 	void doubleRightLeft( AvlNode * & k1 )
 	{
 		AvlNode *k2, *k3;
+		
 		// assign nodes
 		k3 = k1->right;
 		k2 = k3->left;
