@@ -1,8 +1,9 @@
 /*
 The full AVL implementation can be found through Mark Weiss' web site 
-'Data Structures and Algorithm Analysis' 4e.   [http://users.cs.fiu.edu/~weiss/]  
-The only examples the book provides are single rotations.  These are the
-directly implemented double rotations.
+[http://users.cs.fiu.edu/~weiss/]  from 'Data Structures and Algorithm Analysis' 4e.   
+
+The only examples the book provide are single rotations.  
+Below are the directly implemented double rotations.
 */
     /**
      * Double rotate binary tree node: first left child.
@@ -14,19 +15,24 @@ directly implemented double rotations.
 	{
 		AvlNode *k1, *k2;
 		
+		//assign nodes
 		k1 = k3->left;
 		k2 = k1->right;
 		
+		//rotate left
 		k1->right = k2->left;
 		k3->left = k2->right;
 		
+		//rotate right
 		k2->left = k1;
 		k2->right = k3;
 		
+		//update heights
 		k1->height = max( height(k1->left), height(k1->right) ) + 1;
 		k3->height = max( height(k3->left), height(k3->right) ) + 1;
 		k2->height = max( k1->height, k3->height ) + 1;
 		
+		//set root
 		k3 = k2;
 	}
 	
@@ -39,19 +45,19 @@ directly implemented double rotations.
 	void doubleRightLeft( AvlNode * & k1 )
 	{
 		AvlNode *k2, *k3;
-		
+		// assign nodes
 		k3 = k1->right;
 		k2 = k3->left;
-		
+		// rotate right
 		k1->right = k3->left;
 		k2->right = k1->left;
-		
+		// rotate left
 		k2->right = k3;
 		k2->left = k1;
-		
+		// update heights
 		k2->height = max( height(k2->left), height(k2->right) ) + 1;
 		k3->height = max( height(k3->left), height(k3->right) ) + 1;
 		k1->height = max( k2->height, k3->height ) + 1;
-		
+		// set root
 		k1 = k2;
 	}
