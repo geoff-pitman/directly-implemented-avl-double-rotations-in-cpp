@@ -15,7 +15,7 @@ Below are the directly implemented double rotations.
 	{
 		AvlNode *k1, *k2;
 		
-		//assign nodes
+		//assign child nodes
 		k1 = k3->left;
 		k2 = k1->right;
 		//rotate left
@@ -42,7 +42,7 @@ Below are the directly implemented double rotations.
 	{
 		AvlNode *k2, *k3;
 		
-		// assign nodes
+		// assign child nodes
 		k3 = k1->right;
 		k2 = k3->left;
 		// rotate right
