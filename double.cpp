@@ -18,12 +18,11 @@ Below are the directly implemented double rotations.
 		//assign child nodes
 		k1 = k3->left;
 		k2 = k1->right;
-		//rotate left
+		//perform rotations
 		k1->right = k2->left;
 		k3->left = k2->right;
-		//rotate right
 		k2->left = k1;
-		k2->right = k3;
+		k2->right = k3;	
 		//update heights
 		k1->height = max( height(k1->left), height(k1->right) ) + 1;
 		k3->height = max( height(k3->left), height(k3->right) ) + 1;
@@ -45,10 +44,9 @@ Below are the directly implemented double rotations.
 		// assign child nodes
 		k3 = k1->right;
 		k2 = k3->left;
-		// rotate right
+		// perform rotations
 		k1->right = k3->left;
 		k2->right = k1->left;
-		// rotate left
 		k2->right = k3;
 		k2->left = k1;
 		// update heights
