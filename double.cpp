@@ -2,7 +2,7 @@
 The full AVL implementation can be found through Mark Weiss' web site 
 [http://users.cs.fiu.edu/~weiss/]  from 'Data Structures and Algorithm Analysis' 4e.   
 
-The only examples the book provide are single rotations.  
+The only examples the book provides are single rotations.  
 Below are the directly implemented double rotations.
 */
     /**
